@@ -3,16 +3,16 @@
 Starter repository for the [Turing School](https://turing.io/) [Futbol project](https://backend.turing.edu/module1/projects/futbol/).
 
 ## Table of Contents
-  1. [Project Description](#project-description)
-  2. [Testing](#testing)
-    - [Spec Harness](#spec-harness)
-  3. [Iterations](#iterations)
-  4. [Project Requirements](#project-requirements)
-  5. [Learning Goals](#learning-goals)
-  6. [Run and Install The Project](#run-and-install-the-project)
-  7. [Architure and Design](#architure-and-design)
-  8. [Endponts](#endpoints)
-  9. [Credits](#credits)
+1. [Project Description](#project-description)
+2. [Testing](#testing)
+- [Spec Harness](#spec-harness)
+3. [Iterations](#iterations)
+4. [Project Requirements](#project-requirements)
+5. [Learning Goals](#learning-goals)
+6. [Run and Install The Project](#run-and-install-the-project)
+7. [Architure and Design](#architure-and-design)
+8. [Endponts](#endpoints)
+9. [Credits](#credits)
 
 ## Project Description
 We will be using data from a fictional soccer league to analyze team performance for specific seasons and across seasons. We want to see who the best and worst performers are, as well as be able to pull statistics for individual teams. To that end we will create a StatTracker class that will provide us with the information we need.
