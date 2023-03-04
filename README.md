@@ -5,7 +5,7 @@ Starter repository for the [Turing School](https://turing.io/) [Futbol project](
 ## Table of Contents
 1. [Project Description](#project-description)
 2. [Testing](#testing)
-- [Spec Harness](#spec-harness)
+  - [Spec Harness](#spec-harness)
 3. [Iterations](#iterations)
 4. [Project Requirements](#project-requirements)
 5. [Learning Goals](#learning-goals)
