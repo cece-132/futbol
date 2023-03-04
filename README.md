@@ -1,6 +1,6 @@
 # Futbol
 
-Starter repository for the [Turing School](https://turing.io/) [Futbol project](https://backend.turing.edu/module1/projects/futbol/).
+Starter repository for the Turing School of Software and Design, [Futbol project](https://backend.turing.edu/module1/projects/futbol/).
 
 ## Table of Contents
   1. [Project Description](#project-description)
