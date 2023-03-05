@@ -10,7 +10,7 @@ Starter repository for the Turing School of Software and Design, [Futbol project
   4. [Project Requirements](#project-requirements)
   5. [Learning Goals](#learning-goals)
   6. [Run and Install The Project](#run-and-install-the-project)
-  7. [Architure and Design](#architure-and-design)
+  7. [Architecture and Design](#architecture-and-design)
   8. [Endponts](#endpoints)
   9. [Credits](#credits)
 
@@ -76,7 +76,7 @@ In addition to your own tests, instructors will use this Spec Harness to assess 
   Run the entire test suite with `bundle exec rspec`.
   Run your development server with rails s to see the app in action.
 
-## Architure and Design
+## Architecture and Design
 ## Endpoints
 
 ## Credits
