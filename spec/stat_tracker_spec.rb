@@ -22,21 +22,19 @@ RSpec.describe 'StatTracker' do
 
   describe '.from_csv(locations)' do
     it 'should return a hash with csv data' do
-      expect(@stat_tracker).to be_a Hash
-      expect(@stat_tracker).to have_key :games
-      expect(@stat_tracker).to have_key :game_teams
-      expect(@stat_tracker).to have_key :teams
-
-      @stat_tracker.each do |title, table|
-        expect(title).to be_a Symbol
-        expect(table).to be_a CSV::Table
-      end
+      expect(@stat_tracker).to be_a StatTracker
     end
   end
 
   describe '#highest_total_score' do
+    it 'returns the highest sum of the teams scores as a hash' do
+      expect(@stat_tracker.highest_total_score_hash).to be_a Hash
+    end 
+  end
+
+  describe '#highest_total_score' do
     it 'returns the highest sum of the winning and losing teams scores' do
-      stats = @stat_tracker[:games].take(5)
+      expect(@stat_tracker.highest_total_score).to be_a Integer
     end 
   end
 end

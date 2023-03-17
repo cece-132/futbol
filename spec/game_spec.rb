@@ -8,19 +8,21 @@ require './lib/stat_tracker'
 RSpec.describe 'Game' do
   before :each do
     @game_path = './data/games.csv'
+    @team_path = './data/teams.csv'
+    @game_teams_path = './data/game_teams.csv'
 
     @locations = {
-      games: @game_path
+      games: @game_path,
+      teams: @team_path,
+      game_teams: @game_teams_path
     }
 
     @stat_tracker = StatTracker.from_csv(@locations)
-
-    @game_info = @stat_tracker[:games].first
   end
 
   describe '.initialize' do
     it 'exists and has attributes' do
-      game = Game.new(@game_info)
+      game = @stat_tracker.games.first
 
       expect(game).to be_a Game
       expect(game.game_id).to be_a String
