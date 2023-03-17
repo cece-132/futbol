@@ -28,6 +28,13 @@ Progress will be tracked by utilizing a project management tool such as GitHub I
 ## Testing
 Another key goal of this project is to utilize Test Driven Development. Because the data set is so large, it will be inefficient to use the actual dataset as test data. Instead, making up your own test data will be a lot more efficient. This will either be done by creating dummy CSV files, known as fixture files, or by creating dummy data within the test files.
 
+To run the test suite:
+ - Entire suite: `rspec spec`
+ - One file: `rspec spec/<folder_name>/<file_name>.rb
+ - One test: `rspec spec/<folder_name>/<file_name>.rb:<line_number>
+
+To check the testing percentage run `rspec spec`, then `open coverage/index.html`. An internet window should open with the testing coverage percentages for the entire application.
+
 #### Spec Harness
 In addition to your own tests, instructors will use this Spec Harness to assess the completion of your project. Prior to your evaluation, follow the direction in the README to set up the spec harness and verify that your code passes the tests. *NOTE: the spec harness is not a replacement for writing your own tests.*
 
