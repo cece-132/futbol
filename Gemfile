@@ -1,1 +1,2 @@
 gem 'simplecov'
+gem 'pry'
