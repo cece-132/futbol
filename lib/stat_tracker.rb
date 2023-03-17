@@ -18,7 +18,7 @@ class StatTracker
   end
 
   def highest_total_score
-    highest_total_score_hash.max_by { |k,v| v }[1]
+    total_score_hash.max_by { |k,v| v }[1]
   end
 
   def total_score_hash
