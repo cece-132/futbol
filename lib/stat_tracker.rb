@@ -21,7 +21,7 @@ class StatTracker
     highest_total_score_hash.max_by { |k,v| v }[1]
   end
 
-  def highest_total_score_hash
+  def total_score_hash
     hash = {}
     @games.each do |game|
       if hash.has_key?(game.away_team_id)

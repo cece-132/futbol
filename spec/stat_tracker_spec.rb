@@ -26,9 +26,9 @@ RSpec.describe 'StatTracker' do
     end
   end
 
-  describe '#highest_total_score' do
+  describe '#total_score_hash' do
     it 'returns the highest sum of the teams scores as a hash' do
-      expect(@stat_tracker.highest_total_score_hash).to be_a Hash
+      expect(@stat_tracker.total_score_hash).to be_a Hash
     end 
   end
 
