@@ -11,5 +11,5 @@ locations = {
   game_teams: game_teams_path
 }
 
-binding.pry
 stat_tracker = StatTracker.from_csv(locations)
+binding.pry

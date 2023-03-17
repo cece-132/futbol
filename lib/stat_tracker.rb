@@ -1,17 +1,14 @@
 require 'pry'
 require 'csv'
+
 class StatTracker
   
   def self.from_csv(locations)
-    games =
-    game_teams =
-    locations.map do |key, path|
-      CSV.read(path, headers: true, header_converters: :symbol)
+    hash = {}
+    locations.each do |key, path|
+      hash[key] = CSV.parse(File.read("#{path}"), headers: true)
     end
-    binding.pry
+    hash
   end
 
-  def locations
-    
-  end
 end
