@@ -1,4 +1,5 @@
 require 'simplecov'
+require 'pry'
 SimpleCov.start
 
 require './lib/stat_tracker'
@@ -31,5 +32,11 @@ RSpec.describe 'StatTracker' do
         expect(table).to be_a CSV::Table
       end
     end
+  end
+
+  describe '#highest_total_score' do
+    it 'returns the highest sum of the winning and losing teams scores' do
+      stats = @stat_tracker[:games].take(5)
+    end 
   end
 end

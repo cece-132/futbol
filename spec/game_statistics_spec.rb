@@ -20,7 +20,10 @@ RSpec.describe 'StatTracker' do
   end
 
   describe '#highest_total_score' do
-
+    it 'returns the highest sum of the winning and losing teams scores' do
+      sample = @stat_tracker[:games].take(5)
+      games = sample.map { |game| Game.new(game) }
+    end 
   end
 
 end

@@ -10,7 +10,7 @@ class StatTracker
     hash
   end
 
-  def highest_total_score
+  def highest_total_score(stats)
     
   end
 
