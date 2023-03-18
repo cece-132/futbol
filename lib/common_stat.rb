@@ -3,13 +3,7 @@ class CommonStat
   def total_score_hash(stats)
     hash = {}
     stats.each do |game|
-      if hash.has_key?(game.game_id)
-        if game.away_goals + game.home_goals > hash[game.game_id]
-          hash[game.game_id] = game.away_goals + game.home_goals
-        end
-      else
-        hash[game.game_id] = game.away_goals + game.home_goals
-      end
+      hash[game.game_id] = game.away_goals + game.home_goals
     end
     hash
   end
@@ -35,22 +29,3 @@ class CommonStat
   end
 
 end
-
-
-# def total_score_hash(stats)
-#   hash = {}
-#   stats.each do |game|
-#     if hash.has_key?(game.away_team_id)
-#       hash[game.away_team_id] += game.away_goals
-#     elsif hash.has_key?(game.home_team_id)
-#       hash[game.home_team_id] += game.home_goals
-#     else
-#       if !hash.has_key?(game.away_team_id)
-#         hash[game.away_team_id] = game.away_goals
-#       elsif !hash.has_key?(game.home_team_id)
-#         hash[game.home_team_id] = game.home_goals
-#       end
-#     end
-#   end
-#   hash
-# end
