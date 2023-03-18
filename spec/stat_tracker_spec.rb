@@ -52,12 +52,14 @@ RSpec.describe 'StatTracker' do
   describe '#percentage_home_wins' do
     it 'percentage(float) of games that a home team has won (rounded to the nearest 100th)' do
       expect(@stat_tracker.percentage_home_wins).to be_a Float
+      expect(@stat_tracker.percentage_home_wins).to eq 0.44
     end
   end
 
   describe '#percentage_visitor_wins' do
     it 'percentage(float) of games that a home team has won (rounded to the nearest 100th)' do
       expect(@stat_tracker.percentage_visitor_wins).to be_a Float
+      expect(@stat_tracker.percentage_visitor_wins).to eq 0.36
     end
   end
 
