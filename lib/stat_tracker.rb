@@ -1,6 +1,7 @@
 require 'csv'
+require './lib/common_stat'
 
-class StatTracker
+class StatTracker < CommonStat
   attr_reader :games, :teams, :game_teams
 
   def initialize(games, teams, game_teams)
@@ -18,25 +19,7 @@ class StatTracker
   end
 
   def highest_total_score
-    total_score_hash.max_by { |k,v| v }[1]
-  end
-
-  def total_score_hash
-    hash = {}
-    @games.each do |game|
-      if hash.has_key?(game.away_team_id)
-        hash[game.away_team_id] += game.away_goals
-      elsif hash.has_key?(game.home_team_id)
-        hash[game.home_team_id] += game.home_goals
-      else
-        if !hash.has_key?(game.away_team_id)
-          hash[game.away_team_id] = game.away_goals
-        elsif !hash.has_key?(game.home_team_id)
-          hash[game.home_team_id] = game.home_goals
-        end
-      end
-    end
-    hash
+    total_score_hash(@games).max_by { |k,v| v }[1]
   end
 
 end
