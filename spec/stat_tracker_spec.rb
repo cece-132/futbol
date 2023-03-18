@@ -2,6 +2,7 @@ require 'simplecov'
 require 'pry'
 SimpleCov.start
 
+require './lib/common_stat'
 require './lib/stat_tracker'
 
 RSpec.describe 'StatTracker' do
@@ -47,4 +48,17 @@ RSpec.describe 'StatTracker' do
       expect(@stat_tracker.lowest_total_score).to be_a Integer
     end 
   end
+
+  describe '#percentage_home_wins' do
+    it 'percentage(float) of games that a home team has won (rounded to the nearest 100th)' do
+      expect(@stat_tracker.percentage_home_wins).to be_a Float
+    end
+  end
+
+  describe '#percentage_visitor_wins' do
+    it 'percentage(float) of games that a home team has won (rounded to the nearest 100th)' do
+      expect(@stat_tracker.percentage_visitor_wins).to be_a Float
+    end
+  end
+
 end

@@ -25,4 +25,10 @@ RSpec.describe 'CommonStat' do
       expect(@stat_tracker.total_score_hash(@stat_tracker.games)).to be_a Hash
     end 
   end
+
+  describe '#wins_count(stats)' do
+    it 'returns a hash' do
+    expect(@stat_tracker.wins_count(@stat_tracker.games)).to be_a Hash
+    end
+  end
 end

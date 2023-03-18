@@ -1,13 +1,15 @@
+require 'date'
 require 'csv'
-require './lib/common_stat'
+require_relative './common_stat'
+require_relative './game'
 
 class StatTracker < CommonStat
   attr_reader :games, :teams, :game_teams
 
-  def initialize(games, teams, game_teams)
-    @games = games.map { |game| Game.new(game) }
-    @teams = teams
-    @game_teams = game_teams
+  def initialize(data)
+    @games = data[:games].map { |game| Game.new(game) }
+    @teams = data[:teams]
+    @game_teams = data[:game_teams]
   end
   
   def self.from_csv(locations)
@@ -15,7 +17,7 @@ class StatTracker < CommonStat
     locations.each do |key, path|
       hash[key] = CSV.parse(File.read("#{path}"), headers: true)
     end
-    StatTracker.new(hash[:games], hash[:teams], hash[:game_teams])
+    StatTracker.new(hash)
   end
 
   def highest_total_score
@@ -25,5 +27,18 @@ class StatTracker < CommonStat
   def lowest_total_score
     total_score_hash(@games).min_by { |k,v| v }[1]
   end
+
+  def percentage_home_wins
+    wins = wins_count(@games)[:home_wins].sum { |k,v| v }
+    total = @games.length
+    (wins/total.to_f).round(2)
+  end
+
+  def percentage_visitor_wins
+    wins = wins_count(@games)[:away_wins].sum { |k,v| v }
+    total = @games.length
+    (wins/total.to_f).round(2)
+  end
+  
 
 end
