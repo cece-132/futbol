@@ -22,4 +22,8 @@ class StatTracker < CommonStat
     total_score_hash(@games).max_by { |k,v| v }[1]
   end
 
+  def lowest_total_score
+    total_score_hash(@games).min_by { |k,v| v }[1]
+  end
+
 end

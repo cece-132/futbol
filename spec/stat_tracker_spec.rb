@@ -20,6 +20,16 @@ RSpec.describe 'StatTracker' do
     @stat_tracker = StatTracker.from_csv(@locations)
   end
 
+  describe '.initialize' do
+    it 'exists and has attributes' do
+      expect(@stat_tracker).to be_a StatTracker
+      expect(@stat_tracker.games).to be_a Array
+      expect(@stat_tracker.games.first).to be_a Game
+      # expect(@stat_tracker.teams.first).to be_a Team
+      # expect(@stat_tracker.game_teams).to be_a GameTeam
+    end
+  end
+
   describe '.from_csv(locations)' do
     it 'should return a hash with csv data' do
       expect(@stat_tracker).to be_a StatTracker
@@ -29,6 +39,12 @@ RSpec.describe 'StatTracker' do
   describe '#highest_total_score' do
     it 'returns the highest sum of the winning and losing teams scores' do
       expect(@stat_tracker.highest_total_score).to be_a Integer
+    end 
+  end
+
+  describe '#lowest_total_score' do
+    it 'returns the highest sum of the winning and losing teams scores' do
+      expect(@stat_tracker.lowest_total_score).to be_a Integer
     end 
   end
 end

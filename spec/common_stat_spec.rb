@@ -24,5 +24,5 @@ RSpec.describe 'CommonStat' do
     it 'returns the total of the goals scored as a hash' do
       expect(@stat_tracker.total_score_hash(@stat_tracker.games)).to be_a Hash
     end 
-end
+  end
 end
