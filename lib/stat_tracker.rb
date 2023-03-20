@@ -50,4 +50,8 @@ class StatTracker < Game
     goals_per_game_average(@games)
   end
 
+  def average_goals_by_season
+    goal_average_by_season(@games)
+  end
+
 end

@@ -75,4 +75,27 @@ class Game
     home_goals = stats.sum { |game| game.home_goals }
     ((home_goals + away_goals) / (stats.length.to_f)).round(2)
   end
+
+  def goal_average_by_season(stats)
+    hash = games_by_season(stats)
+    games_by_season(stats).each do |season, games|
+      away_goals = games.sum { |game| game.away_goals }
+      home_goals = games.sum { |game| game.home_goals }
+      hash[season] = ((home_goals + away_goals) / (games.length.to_f)).round(2)
+    end
+    hash
+  end
+
+  def games_by_season(stats)
+    hash = {}
+    stats.each do |game|
+      if !hash.has_key?(game.season) 
+        hash[game.season] = [game]
+      else
+        hash[game.season] << game
+      end
+    end
+    hash
+  end
+
 end
