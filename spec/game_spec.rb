@@ -37,4 +37,23 @@ RSpec.describe 'Game' do
       expect(game.venue_link).to be_a String
     end
   end
+
+  describe '#total_score_hash' do
+    it 'returns the total of the goals scored as a hash' do
+      expect(@stat_tracker.total_score_hash(@stat_tracker.games)).to be_a Hash
+    end 
+  end
+
+  describe '#wins_count(stats)' do
+    it 'returns a hash' do
+      expect(@stat_tracker.wins_count(@stat_tracker.games)).to be_a Hash
+    end
+  end
+
+  describe '.date' do
+    it 'returns a Date object' do
+      game = @stat_tracker.games.first
+      expect(game.date_time).to be_a Date
+    end
+  end
 end

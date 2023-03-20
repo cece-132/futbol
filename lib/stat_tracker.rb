@@ -1,9 +1,8 @@
 require 'date'
 require 'csv'
-require_relative './common_stat'
 require_relative './game'
 
-class StatTracker < CommonStat
+class StatTracker < Game
   attr_reader :games, :teams, :game_teams
 
   def initialize(data)
@@ -40,5 +39,8 @@ class StatTracker < CommonStat
     (wins/total.to_f).round(2)
   end
   
+  def count_of_games_by_season
+    
+  end
 
 end
