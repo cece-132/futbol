@@ -40,7 +40,7 @@ class StatTracker < Game
   end
   
   def count_of_games_by_season
-    
+    total_games_by_season(@games)
   end
 
 end

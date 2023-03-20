@@ -57,4 +57,16 @@ class Game
     end
     hash
   end
+
+  def total_games_by_season(stats)
+    hash = {}
+    stats.each do |game|
+      if !hash.has_key?(game.season)
+        hash[game.season] = 1
+      else
+        hash[game.season] += 1
+      end
+    end
+    hash
+  end
 end

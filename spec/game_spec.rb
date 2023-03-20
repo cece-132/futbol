@@ -50,10 +50,26 @@ RSpec.describe 'Game' do
     end
   end
 
-  describe '.date' do
+  describe '#date' do
     it 'returns a Date object' do
       game = @stat_tracker.games.first
       expect(game.date_time).to be_a Date
+    end
+  end
+
+  describe '#total_games_by_season(stats)' do
+    it 'returns a hash withe the total numbe of games played per season' do
+      expected = {
+        "20122013"=>806,
+        "20162017"=>1317,
+        "20142015"=>1319,
+        "20152016"=>1321,
+        "20132014"=>1323,
+        "20172018"=>1355
+      }
+
+      expect(@stat_tracker.total_games_by_season(@stat_tracker.games)).to eq expected
+      expect(@stat_tracker.total_games_by_season(@stat_tracker.games)).to be_a Hash
     end
   end
 end
