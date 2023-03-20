@@ -69,4 +69,10 @@ class Game
     end
     hash
   end
+
+  def goals_per_game_average(stats)
+    away_goals = stats.sum { |game| game.away_goals }
+    home_goals = stats.sum { |game| game.home_goals }
+    ((home_goals + away_goals) / (stats.length.to_f)).round(2)
+  end
 end

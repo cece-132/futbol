@@ -3,6 +3,9 @@ require 'csv'
 require_relative './game'
 
 class StatTracker < Game
+  # include GameStatistics
+  # separate game initialize from game statistics
+  # game_statistics would need to be a Module
   attr_reader :games, :teams, :game_teams
 
   def initialize(data)
@@ -41,6 +44,10 @@ class StatTracker < Game
   
   def count_of_games_by_season
     total_games_by_season(@games)
+  end
+
+  def average_goals_per_game
+    goals_per_game_average(@games)
   end
 
 end
