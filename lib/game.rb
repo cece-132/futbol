@@ -97,5 +97,4 @@ class Game
     end
     hash
   end
-
 end
