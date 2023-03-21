@@ -2,6 +2,7 @@ require 'date'
 require 'csv'
 require_relative './game'
 require_relative './team'
+require_relative './game_team'
 require_relative './game_statistics'
 require_relative './league_statistics'
 
@@ -13,7 +14,7 @@ class StatTracker
   def initialize(data)
     @games = data[:games].map { |game| Game.new(game) }
     @teams = data[:teams].map { |team| Team.new(team) }
-    @game_teams = data[:game_teams]
+    @game_teams = data[:game_teams].map { |game_team| GameTeam.new(game_team) }
   end
   
   def self.from_csv(locations)
