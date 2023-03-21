@@ -1,9 +1,10 @@
 require 'date'
 require 'csv'
 require_relative './game'
+require_relative './game_statistics'
 
-class StatTracker < Game
-  # include GameStatistics
+class StatTracker
+  include GameStatistics
   # separate game initialize from game statistics
   # game_statistics would need to be a Module
   attr_reader :games, :teams, :game_teams
