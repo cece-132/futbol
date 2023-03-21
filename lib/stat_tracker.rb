@@ -1,15 +1,18 @@
 require 'date'
 require 'csv'
 require_relative './game'
+require_relative './team'
 require_relative './game_statistics'
+require_relative './league_statistics'
 
 class StatTracker
   include GameStatistics
+  include LeagueStatistics
   attr_reader :games, :teams, :game_teams
 
   def initialize(data)
     @games = data[:games].map { |game| Game.new(game) }
-    @teams = data[:teams]
+    @teams = data[:teams].map { |team| Team.new(team) }
     @game_teams = data[:game_teams]
   end
   
@@ -58,11 +61,13 @@ class StatTracker
   end
 
   def best_offense
+    team_id = highest_goal_average(@game_teams)
     # uses team_id to find the team name
     # returns a string, by using a method that returns a hash
     # of the highest average of games scored across all seasons
     # key = team_id, value is the average
-    
+    binding.pry
+    x = @teams.find { |team| teamName if team.team_id == team_id }
     binding.pry
   end
 
