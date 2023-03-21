@@ -5,8 +5,6 @@ require_relative './game_statistics'
 
 class StatTracker
   include GameStatistics
-  # separate game initialize from game statistics
-  # game_statistics would need to be a Module
   attr_reader :games, :teams, :game_teams
 
   def initialize(data)
@@ -54,5 +52,11 @@ class StatTracker
   def average_goals_by_season
     goal_average_by_season(@games)
   end
+
+  def count_of_teams
+    @teams.uniq.count
+  end
+
+
 
 end

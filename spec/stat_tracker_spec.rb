@@ -87,7 +87,7 @@ RSpec.describe 'StatTracker' do
     end
   end
 
-  describe 'average_goals_per_season' do
+  describe '#average_goals_per_season' do
     it "calculates season average goals" do
       expected = {
         "20122013"=>4.12,
@@ -101,5 +101,14 @@ RSpec.describe 'StatTracker' do
       expect(@stat_tracker.average_goals_by_season).to eq expected
     end
   end
+
+  describe '#count_of_team' do
+    it 'counts the number of teams in the league' do
+      expect(@stat_tracker.count_of_teams).to be_a Integer
+      expect(@stat_tracker.count_of_teams).to eq 32
+    end
+  end
+
+  
 
 end
