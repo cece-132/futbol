@@ -109,6 +109,13 @@ RSpec.describe 'StatTracker' do
     end
   end
 
+  describe '#best_offense' do
+    it 'calculates the best offensive team, defined by highest average of goals across all seasons' do
+      expect(@stat_tracker.best_offense).to be_a String
+      expect(@stat_tracker.best_offense).to eq "Reign FC"
+    end
+  end
+
   
 
 end

@@ -57,6 +57,13 @@ class StatTracker
     @teams.uniq.count
   end
 
-
+  def best_offense
+    # uses team_id to find the team name
+    # returns a string, by using a method that returns a hash
+    # of the highest average of games scored across all seasons
+    # key = team_id, value is the average
+    
+    binding.pry
+  end
 
 end
