@@ -1,17 +1,20 @@
 require 'date'
 require 'csv'
 require_relative './game'
+require_relative './team'
+require_relative './game_team'
+require_relative './game_statistics'
+require_relative './league_statistics'
 
-class StatTracker < Game
-  # include GameStatistics
-  # separate game initialize from game statistics
-  # game_statistics would need to be a Module
+class StatTracker
+  include GameStatistics
+  include LeagueStatistics
   attr_reader :games, :teams, :game_teams
 
   def initialize(data)
     @games = data[:games].map { |game| Game.new(game) }
-    @teams = data[:teams]
-    @game_teams = data[:game_teams]
+    @teams = data[:teams].map { |team| Team.new(team) }
+    @game_teams = data[:game_teams].map { |game_team| GameTeam.new(game_team) }
   end
   
   def self.from_csv(locations)
@@ -54,4 +57,31 @@ class StatTracker < Game
     goal_average_by_season(@games)
   end
 
+  def count_of_teams
+    @teams.uniq.count
+  end
+
+  def best_offense
+    Team.find_name(@teams, team_highest_goal_average(@game_teams))
+  end
+
+  def worst_offense
+    Team.find_name(@teams, team_lowest_goal_average(@game_teams))
+  end
+
+  def highest_scoring_visitor
+    Team.find_name(@teams, team_highest_visiting_goal_average(@game_teams))
+  end
+
+  def highest_scoring_home_team
+    Team.find_name(@teams, team_highest_home_goal_average(@game_teams))
+  end
+
+  def lowest_scoring_visitor
+    Team.find_name(@teams, team_lowest_visiting_goal_average(@game_teams))
+  end
+
+  def lowest_scoring_home_team
+    Team.find_name(@teams, team_lowest_home_goal_average(@game_teams))
+  end
 end
