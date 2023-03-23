@@ -77,4 +77,11 @@ class StatTracker
     Team.find_name(@teams, team_highest_home_goal_average(@game_teams))
   end
 
+  def lowest_scoring_visitor
+    Team.find_name(@teams, team_lowest_visiting_goal_average(@game_teams))
+  end
+
+  def lowest_scoring_home_team
+    Team.find_name(@teams, team_lowest_home_goal_average(@game_teams))
+  end
 end
