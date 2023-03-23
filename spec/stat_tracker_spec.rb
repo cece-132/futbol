@@ -130,6 +130,11 @@ RSpec.describe 'StatTracker' do
     end
   end
 
-  
+  describe '#highest_scoring_home_team' do
+    it 'calculates the team with the highest scoring average while home team' do
+      expect(@stat_tracker.highest_scoring_home_team).to be_a String
+      expect(@stat_tracker.highest_scoring_home_team).to eq "FC Dallas"
+    end
+  end
 
 end
