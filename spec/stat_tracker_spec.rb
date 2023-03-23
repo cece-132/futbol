@@ -116,6 +116,13 @@ RSpec.describe 'StatTracker' do
     end
   end
 
+  describe '#worst_offense' do
+    it 'calculates the worst offensive team, defined by lowest average of goals across all seasons' do
+      expect(@stat_tracker.worst_offense).to be_a String
+      expect(@stat_tracker.worst_offense).to eq "Utah Royals FC"
+    end
+  end
+
   
 
 end

@@ -7,6 +7,13 @@ module LeagueStatistics
     team_id[0]
   end
 
+  def team_lowest_goal_average(game_team_data)
+    team_id = team_goal_data(game_team_data).min_by do |team_id, data|
+      data[:goals]/data[:game_count].to_f
+    end
+    team_id[0]
+  end
+
   def team_goal_data(data)
     hash = {}
     data.each do |game_team|

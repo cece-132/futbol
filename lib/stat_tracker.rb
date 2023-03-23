@@ -66,4 +66,9 @@ class StatTracker
     @teams.find { |team| team.id == team_id }.name
   end
 
+  def worst_offense
+    team_id = team_lowest_goal_average(@game_teams)
+    @teams.find { |team| team.id == team_id }.name
+  end
+
 end
