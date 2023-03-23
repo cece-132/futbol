@@ -1,5 +1,5 @@
 module GameStatistics
-  
+
   def total_score_hash(stats)
     hash = {}
     stats.each do |game|
@@ -69,4 +69,5 @@ module GameStatistics
     end
     hash
   end
+  
 end
