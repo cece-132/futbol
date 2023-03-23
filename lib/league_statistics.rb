@@ -7,7 +7,7 @@ module LeagueStatistics
     team_id[0]
   end
 
-  def team_goal_data(game_teams)
+  def team_goal_data(data)
     hash = {}
     data.each do |game_team|
       if !hash.has_key?(game_team.team_id)
