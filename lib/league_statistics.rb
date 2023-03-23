@@ -1,13 +1,13 @@
 module LeagueStatistics
 
   def team_highest_goal_average(game_team_data)
-    team_id = team_goal_averages(game_team_data).max_by do |team_id, data|
+    team_id = team_goal_data(game_team_data).max_by do |team_id, data|
       data[:goals]/data[:game_count].to_f
     end
     team_id[0]
   end
 
-  def team_goal_averages(data)
+  def team_goal_data(game_teams)
     hash = {}
     data.each do |game_team|
       if !hash.has_key?(game_team.team_id)
