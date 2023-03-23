@@ -70,7 +70,7 @@ class StatTracker
   end
 
   def highest_scoring_visitor
-    binding.pry
+    Team.find_name(@teams, team_highest_visiting_goal_average(@game_teams))
   end
 
 end
