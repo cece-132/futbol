@@ -62,13 +62,15 @@ class StatTracker
   end
 
   def best_offense
-    team_id = team_highest_goal_average(@game_teams)
-    @teams.find { |team| team.id == team_id }.name
+    Team.find_name(@teams, team_highest_goal_average(@game_teams))
   end
 
   def worst_offense
-    team_id = team_lowest_goal_average(@game_teams)
-    @teams.find { |team| team.id == team_id }.name
+    Team.find_name(@teams, team_lowest_goal_average(@game_teams))
+  end
+
+  def highest_scoring_visitor
+    binding.pry
   end
 
 end

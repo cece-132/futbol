@@ -1,3 +1,4 @@
+require 'pry'
 class Team
   attr_reader :id, :franchise_id, :name,
               :abbrv, :stadium, :link
@@ -8,6 +9,10 @@ class Team
     @abbrv = data['abbreviation']
     @stadium = data['Stadium']
     @link = data['link']
+  end
+
+  def self.find_name(teams, team_id)
+    teams.find { |team| team.id == team_id }.name
   end
   
 end
