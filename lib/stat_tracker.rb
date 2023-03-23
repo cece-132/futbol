@@ -90,4 +90,8 @@ class StatTracker
   def winningest_coach(season)
     GameTeam.find_coach(@game_teams, best_win_percentage(@game_teams, season), season)
   end
+
+  def worst_coach(season)
+    GameTeam.find_coach(season_games_by_season(@game_teams, season), worst_win_percentage(@game_teams, season), season)
+  end
 end

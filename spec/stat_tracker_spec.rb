@@ -159,4 +159,12 @@ RSpec.describe 'StatTracker' do
     end
   end
 
+  describe '#worst_coach' do
+    it "#worst_coach" do
+      expect(@stat_tracker.worst_coach("20132014")).to be_a String
+      expect(@stat_tracker.worst_coach("20132014")).to eq "Ted Nolan"
+      expect(@stat_tracker.worst_coach("20142015")).to eq("Craig MacTavish").or(eq("Ted Nolan"))
+    end
+  end
+
 end

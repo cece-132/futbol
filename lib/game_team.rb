@@ -25,10 +25,10 @@ class GameTeam
   end
 
   def self.find_coach(game_teams, team_id, season)
-   game_teams.find do |team| 
-    if team.team_id == team_id && (team.game_id[0,4] + (team.game_id[0,4].to_i + 1).to_s) == season
-      team
-    end
-   end.head_coach
+    game_teams.find do |team| 
+      if team.team_id == team_id && (team.game_id[0,4] + (team.game_id[0,4].to_i + 1).to_s) == season
+        team
+      end
+    end.head_coach
   end
 end

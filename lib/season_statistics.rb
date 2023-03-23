@@ -8,6 +8,14 @@ module SeasonStatistics
     team_id[0] 
   end
 
+  def worst_win_percentage(game_team_data, season)
+    season_games = game_data(game_team_data, season)
+    team_id = season_games.min_by do |team_id, data|
+      data[:wins]/(data[:losses] + data[:ties] + data[:wins]).to_f
+    end
+    team_id[0] 
+  end
+
   def game_data(data, season)
     hash = {}
     data.each do |game_team|
@@ -33,6 +41,14 @@ module SeasonStatistics
       end
     end
     hash
+  end
+
+  def season_games_by_season(data, season)
+    data.map do |game|
+      if (game.game_id[0,4] + (game.game_id[0,4].to_i + 1).to_s) == season
+        game
+      end
+    end.compact
   end
   
 end
