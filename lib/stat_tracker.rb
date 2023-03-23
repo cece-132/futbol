@@ -62,14 +62,8 @@ class StatTracker
   end
 
   def best_offense
-    team_id = highest_goal_average(@game_teams)
-    # uses team_id to find the team name
-    # returns a string, by using a method that returns a hash
-    # of the highest average of games scored across all seasons
-    # key = team_id, value is the average
-    binding.pry
-    x = @teams.find { |team| teamName if team.team_id == team_id }
-    binding.pry
+    team_id = team_highest_goal_average(@game_teams)
+    @teams.find { |team| team.id == team_id }.name
   end
 
 end
