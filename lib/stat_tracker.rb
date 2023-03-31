@@ -94,4 +94,8 @@ class StatTracker
   def worst_coach(season)
     GameTeam.find_coach(season_games_by_season(@game_teams, season), worst_win_percentage(@game_teams, season), season)
   end
+
+  def most_accurate_team(season)
+    Team.find_team_name(most_accurate_team_for_season(season, season_games_by_season(@game_teams, season)), @teams)
+  end
 end

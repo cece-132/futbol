@@ -51,4 +51,10 @@ module SeasonStatistics
     end.compact
   end
   
+
+  def most_accurate_team_for_season(season, game_teams)
+    game_teams.max_by do |game|
+      (game.goals / game.shots)
+    end
+  end
 end
