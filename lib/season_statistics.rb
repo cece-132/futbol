@@ -66,11 +66,11 @@ module SeasonStatistics
   end
 
   def highest_tackles_for_season(season, game_teams)
-    season_tackle_data(season, game_teams).max_by { |team_id, tackle_total| tackle_total}[0]
+    season_tackle_data(season, game_teams).max_by { |team_id, tackle_total| tackle_total }[0]
   end
 
   def least_tackles_for_season(season, game_teams)
-    season_tackle_data(season, game_teams).min_by { |team_id, tackle_total| tackle_total}[0]
+    season_tackle_data(season, game_teams).min_by { |team_id, tackle_total| tackle_total }[0]
   end
 
   def season_tackle_data(season, game_teams)
