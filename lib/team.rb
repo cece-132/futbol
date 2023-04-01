@@ -14,5 +14,9 @@ class Team
   def self.find_name(teams, team_id)
     teams.find { |team| team.id == team_id }.name
   end
+
+  def self.find_team_name(team_id, teams)
+    teams.find { |tm| tm.id == team_id }.name
+  end
   
 end
