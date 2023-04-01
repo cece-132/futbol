@@ -15,8 +15,9 @@ class Team
     teams.find { |team| team.id == team_id }.name
   end
 
-  def self.find_team_name(team, teams)
-    teams.find { |tm| tm.id == team.team_id }.name
+  def self.find_team_name(team_id, teams)
+    teams.find { |tm| tm.id == team_id }.name
+    #replacing team with team_id attribute
   end
   
 end

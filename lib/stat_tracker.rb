@@ -102,4 +102,13 @@ class StatTracker
   def least_accurate_team(season)
     Team.find_team_name(least_accurate_team_for_season(season, season_games_by_season(@game_teams, season)), @teams)
   end
+
+  def most_tackles(season)
+    Team.find_team_name(highest_tackles_for_season(season, season_games_by_season(@game_teams, season)), @teams)
+  end
+
+  def fewest_tackles(season)
+    Team.find_team_name(least_tackles_for_season(season, season_games_by_season(@game_teams, season)), @teams)
+  end
+
 end

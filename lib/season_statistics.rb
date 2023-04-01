@@ -55,12 +55,34 @@ module SeasonStatistics
   def most_accurate_team_for_season(season, game_teams)
     game_teams.max_by do |game|
       (game.goals / game.shots)
-    end
+    end.team_id
+    #adding .game_id and sending that to find team method
   end
 
   def least_accurate_team_for_season(season, game_teams)
     game_teams.min_by do |game|
       (game.goals / game.shots)
-    end
+    end.team_id
   end
+
+  def highest_tackles_for_season(season, game_teams)
+    season_tackle_data(season, game_teams).max_by { |team_id, tackle_total| tackle_total}[0]
+  end
+
+  def least_tackles_for_season(season, game_teams)
+    season_tackle_data(season, game_teams).min_by { |team_id, tackle_total| tackle_total}[0]
+  end
+
+  def season_tackle_data(season, game_teams)
+    hash = {}
+    game_teams.each do |game|
+      if hash[game.team_id]
+        hash[game.team_id] += game.tackles
+      else
+        hash[game.team_id] = game.tackles
+      end
+    end
+    hash
+  end
+
 end
