@@ -169,8 +169,17 @@ RSpec.describe 'StatTracker' do
 
   describe '#most_accurate_team' do
     it "#most_accurate_team" do
+      expect(@stat_tracker.most_accurate_team("20132014")).to be_a String
       expect(@stat_tracker.most_accurate_team("20132014")).to eq "Orlando City SC"
-      expect(@stat_tracker.most_accurate_team("20142015")).to eq "LA Galaxy"
+      expect(@stat_tracker.most_accurate_team("20142015")).to eq "Atlanta United"
+    end
+  end
+
+  describe '#least_accurate_team' do
+    it "#least_accurate_team" do
+      expect(@stat_tracker.least_accurate_team("20132014")).to be_a String
+      expect(@stat_tracker.least_accurate_team("20132014")).to eq "Philadelphia Union"
+      expect(@stat_tracker.least_accurate_team("20142015")).to eq "FC Cincinnati"
     end
   end
 

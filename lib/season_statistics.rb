@@ -45,7 +45,7 @@ module SeasonStatistics
 
   def season_games_by_season(data, season)
     data.map do |game|
-      if (game.game_id[0,4] + (game.game_id[0,4].to_i + 1).to_s) == season
+      if (game.game_id[0,4] + (game.game_id[0,4].to_i + 1).to_s) == season && game.game_id[4..5] == '02'
         game
       end
     end.compact
@@ -54,6 +54,12 @@ module SeasonStatistics
 
   def most_accurate_team_for_season(season, game_teams)
     game_teams.max_by do |game|
+      (game.goals / game.shots)
+    end
+  end
+
+  def least_accurate_team_for_season(season, game_teams)
+    game_teams.min_by do |game|
       (game.goals / game.shots)
     end
   end

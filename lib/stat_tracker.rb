@@ -98,4 +98,8 @@ class StatTracker
   def most_accurate_team(season)
     Team.find_team_name(most_accurate_team_for_season(season, season_games_by_season(@game_teams, season)), @teams)
   end
+
+  def least_accurate_team(season)
+    Team.find_team_name(least_accurate_team_for_season(season, season_games_by_season(@game_teams, season)), @teams)
+  end
 end
