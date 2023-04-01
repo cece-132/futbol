@@ -152,34 +152,48 @@ RSpec.describe 'StatTracker' do
   end
 
   describe '#winningest_coach(season)' do
-    it "#coach with the best win percentage for the season" do
+    it "coach with the highest win percentage for the season" do
       expect(@stat_tracker.winningest_coach("20132014")).to be_a String
       expect(@stat_tracker.winningest_coach("20132014")).to eq "Claude Julien"
       expect(@stat_tracker.winningest_coach("20142015")).to eq "Alain Vigneault"
     end
   end
 
-  describe '#worst_coach' do
-    it "#worst_coach" do
+  describe '#worst_coach(season)' do
+    it "coach with the lowest win percentage for the season" do
       expect(@stat_tracker.worst_coach("20132014")).to be_a String
       expect(@stat_tracker.worst_coach("20132014")).to eq "Ted Nolan"
       expect(@stat_tracker.worst_coach("20142015")).to eq("Craig MacTavish").or(eq("Ted Nolan"))
     end
   end
 
-  describe '#most_accurate_team' do
-    it "#most_accurate_team" do
+  describe '#most_accurate_team(season)' do
+    it "Name of the Team with the highest ratio of shots to goals for the season" do
       expect(@stat_tracker.most_accurate_team("20132014")).to be_a String
       expect(@stat_tracker.most_accurate_team("20132014")).to eq "Orlando City SC"
       expect(@stat_tracker.most_accurate_team("20142015")).to eq "Atlanta United"
     end
   end
 
-  describe '#least_accurate_team' do
-    it "#least_accurate_team" do
+  describe '#least_accurate_team(season)' do
+    it "Name of the Team with the lowest ratio of shots to goals for the season" do
       expect(@stat_tracker.least_accurate_team("20132014")).to be_a String
       expect(@stat_tracker.least_accurate_team("20132014")).to eq "Philadelphia Union"
       expect(@stat_tracker.least_accurate_team("20142015")).to eq "FC Cincinnati"
+    end
+  end
+
+  describe '#most_tackles(season)' do
+    it "Name of the Team with the most tackles in the season" do
+      expect(@stat_tracker.most_tackles("20132014")).to eq "FC Cincinnati"
+      expect(@stat_tracker.most_tackles("20142015")).to eq "Seattle Sounders FC"
+    end
+  end
+
+  describe '#least_tackles(season)'
+    it "Name of the Team with the least tackles in the season" do
+      expect(@stat_tracker.fewest_tackles("20132014")).to eq "Atlanta United"
+      expect(@stat_tracker.fewest_tackles("20142015")).to eq "Orlando City SC"
     end
   end
 
