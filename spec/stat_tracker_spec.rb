@@ -199,4 +199,35 @@ RSpec.describe 'StatTracker' do
     end
   end
 
+  describe '#team_info' do
+    it 'returns a hash for attributes: team_id, franchise_id, team_name, abbreviation, and link' do
+      expected = {
+        "team_id" => "18",
+        "franchise_id" => "34",
+        "team_name" => "Minnesota United FC",
+        "abbreviation" => "MIN",
+        "link" => "/api/v1/teams/18"
+      }
+  
+      expect(@stat_tracker.team_info("18")).to be_a Hash
+      expect(@stat_tracker.team_info("18")).to have_key('team_id')
+      expect(@stat_tracker.team_info("18")['team_id']).to be_a String
+
+      expect(@stat_tracker.team_info("18")).to have_key('franchise_id')
+      expect(@stat_tracker.team_info("18")['franchise_id']).to be_a String
+
+      expect(@stat_tracker.team_info("18")).to have_key('team_name')
+      expect(@stat_tracker.team_info("18")['team_name']).to be_a String
+
+      expect(@stat_tracker.team_info("18")).to have_key('abbreviation')
+      expect(@stat_tracker.team_info("18")['abbreviation']).to be_a String
+
+      expect(@stat_tracker.team_info("18")).to have_key('link')
+      expect(@stat_tracker.team_info("18")['link']).to be_a String
+
+      expect(@stat_tracker.team_info("18")).to eq expected
+    end
+  end
+
+
 end
