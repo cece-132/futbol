@@ -56,7 +56,6 @@ module SeasonStatistics
     game_teams.max_by do |game|
       (game.goals / game.shots)
     end.team_id
-    #adding .game_id and sending that to find team method
   end
 
   def least_accurate_team_for_season(season, game_teams)

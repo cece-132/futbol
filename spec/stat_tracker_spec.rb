@@ -199,7 +199,7 @@ RSpec.describe 'StatTracker' do
     end
   end
 
-  describe '#team_info' do
+  describe '#team_info(team_id)' do
     it 'returns a hash for attributes: team_id, franchise_id, team_name, abbreviation, and link' do
       expected = {
         "team_id" => "18",
@@ -226,6 +226,13 @@ RSpec.describe 'StatTracker' do
       expect(@stat_tracker.team_info("18")['link']).to be_a String
 
       expect(@stat_tracker.team_info("18")).to eq expected
+    end
+  end
+
+  describe '#best_season(team_id)' do
+    it 'season with the highest win percentage for a team' do
+      expect(@stat_tracker.best_season("6")).to be_a String
+      expect(@stat_tracker.best_season("6")).to eq "20132014"
     end
   end
 
