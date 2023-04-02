@@ -6,11 +6,13 @@ require_relative './game_team'
 require_relative './game_statistics'
 require_relative './league_statistics'
 require_relative './season_statistics'
+require_relative './team_statistics'
 
 class StatTracker
   include GameStatistics
   include LeagueStatistics
   include SeasonStatistics
+  include TeamStatistics
   attr_reader :games, :teams, :game_teams
 
   def initialize(data)
@@ -109,6 +111,10 @@ class StatTracker
 
   def fewest_tackles(season)
     Team.find_team_name(least_tackles_for_season(season, season_games_by_season(@game_teams, season)), @teams)
+  end
+
+  def team_info(team_id)
+    team_data(team_id, @teams)
   end
 
 end
