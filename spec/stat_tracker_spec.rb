@@ -245,18 +245,21 @@ RSpec.describe 'StatTracker' do
 
   describe '#average_win_percentage(team_id)' do
     it "#average_win_percentage" do
+      expect(@stat_tracker.average_win_percentage("6")).to be_a Float
       expect(@stat_tracker.average_win_percentage("6")).to eq 0.49
     end
   end
 
   describe '#most_goals_scored(team_id)' do
     it "#most_goals_scored" do
+      expect(@stat_tracker.most_goals_scored("18")).to be_a Integer
       expect(@stat_tracker.most_goals_scored("18")).to eq 7
     end
   end
 
   describe '#fewest_goals_scored(team_id)' do
     it "#fewest_goals_scored" do
+      expect(@stat_tracker.fewest_goals_scored("18")).to be_a Integer
       expect(@stat_tracker.fewest_goals_scored("18")).to eq 0
     end
   end
