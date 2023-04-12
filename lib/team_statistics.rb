@@ -74,4 +74,14 @@ module TeamStatistics
     highest_score
   end
 
+  def team_fewest_goals_scored(game_teams, team_id)
+    lowest_score = 0
+    games_by_team(game_teams, team_id).each do |season, games|
+      games.each do |game|
+        lowest_score = game.goals if game.goals < lowest_score
+      end
+    end
+    lowest_score
+  end
+
 end

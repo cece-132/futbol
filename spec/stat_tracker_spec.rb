@@ -255,5 +255,11 @@ RSpec.describe 'StatTracker' do
     end
   end
 
+  describe '#fewest_goals_scored(team_id)' do
+    it "#fewest_goals_scored" do
+      expect(@stat_tracker.fewest_goals_scored("18")).to eq 0
+    end
+  end
+
 
 end
