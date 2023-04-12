@@ -64,4 +64,14 @@ module TeamStatistics
     (win_percentage_total / total_seasons).round(2)
   end
 
+  def team_most_goals_scored(game_teams, team_id)
+    highest_score = 0
+    games_by_team(game_teams, team_id).each do |season, games|
+      games.each do |game|
+        highest_score = game.goals if game.goals > highest_score
+      end
+    end
+    highest_score
+  end
+
 end

@@ -249,5 +249,11 @@ RSpec.describe 'StatTracker' do
     end
   end
 
+  describe '#most_goals_scored(team_id)' do
+    it "#most_goals_scored" do
+      expect(@stat_tracker.most_goals_scored("18")).to eq 7
+    end
+  end
+
 
 end
