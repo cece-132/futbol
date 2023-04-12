@@ -118,7 +118,7 @@ class StatTracker
   end
 
   def best_season(team_id)
-    best_season_for(team_id)
+    best_season_for(@game_teams, team_id)
   end
 
 end
