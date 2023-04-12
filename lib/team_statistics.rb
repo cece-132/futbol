@@ -42,19 +42,18 @@ module TeamStatistics
       hash[season] = wins/total.to_f
     end
     hash
-    # takes in all the games as an argument
-    # sorts as hash key: season, value: [games]
-    # the games will only be the ones with the team_id
   end
 
   def best_season_for(game_teams, team_id)
     percentage_of_wins_by_season(games_by_team(game_teams, team_id)).max_by do |season, percentage| 
       percentage 
     end[0]
-    # takes games bt season hash and counts the # of wins
-    # divides that sum by the total number of games
-    # pull the highest average of goals
-    # using .max_by
+  end
+
+  def worst_season_for(game_teams, team_id)
+    percentage_of_wins_by_season(games_by_team(game_teams, team_id)).min_by do |season, percentage| 
+      percentage 
+    end[0]
   end
 
 end

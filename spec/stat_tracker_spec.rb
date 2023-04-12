@@ -236,5 +236,12 @@ RSpec.describe 'StatTracker' do
     end
   end
 
+  describe '#worst_season(team_id)' do
+    it "#worst_season" do
+      expect(@stat_tracker.worst_season("6")).to be_a String
+      expect(@stat_tracker.worst_season("6")).to eq "20142015"
+    end
+  end
+
 
 end

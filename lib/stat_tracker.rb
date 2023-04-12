@@ -121,4 +121,8 @@ class StatTracker
     best_season_for(@game_teams, team_id)
   end
 
+  def worst_season(team_id)
+    worst_season_for(@game_teams, team_id)
+  end
+
 end
