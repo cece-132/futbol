@@ -56,4 +56,12 @@ module TeamStatistics
     end[0]
   end
 
+  def average_win_percentage_for(game_teams, team_id)
+    total_seasons = percentage_of_wins_by_season(games_by_team(game_teams, team_id)).count
+    win_percentage_total = percentage_of_wins_by_season(games_by_team(game_teams, team_id)).sum do |season, average|
+      average
+    end
+    (win_percentage_total / total_seasons).round(2)
+  end
+
 end

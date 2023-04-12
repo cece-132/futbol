@@ -125,4 +125,8 @@ class StatTracker
     worst_season_for(@game_teams, team_id)
   end
 
+  def average_win_percentage(team_id)
+    average_win_percentage_for(@game_teams, team_id)
+  end
+
 end
