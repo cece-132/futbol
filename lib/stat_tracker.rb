@@ -6,11 +6,13 @@ require_relative './game_team'
 require_relative './game_statistics'
 require_relative './league_statistics'
 require_relative './season_statistics'
+require_relative './team_statistics'
 
 class StatTracker
   include GameStatistics
   include LeagueStatistics
   include SeasonStatistics
+  include TeamStatistics
   attr_reader :games, :teams, :game_teams
 
   def initialize(data)
@@ -109,6 +111,38 @@ class StatTracker
 
   def fewest_tackles(season)
     Team.find_team_name(least_tackles_for_season(season, season_games_by_season(@game_teams, season)), @teams)
+  end
+
+  def team_info(team_id)
+    team_data(team_id, @teams)
+  end
+
+  def best_season(team_id)
+    best_season_for(@game_teams, team_id)
+  end
+
+  def worst_season(team_id)
+    worst_season_for(@game_teams, team_id)
+  end
+
+  def average_win_percentage(team_id)
+    average_win_percentage_for(@game_teams, team_id)
+  end
+
+  def most_goals_scored(team_id)
+    team_most_goals_scored(@game_teams, team_id)
+  end
+
+  def fewest_goals_scored(team_id)
+    team_fewest_goals_scored(@game_teams, team_id)
+  end
+
+  def favorite_opponent(team_id)
+    Team.find_team_name(team_fav_opponent(@game_teams, @games, team_id), @teams)
+  end
+
+  def rival(team_id)
+    Team.find_team_name(rival_opponent(@game_teams, @games, team_id), @teams)
   end
 
 end

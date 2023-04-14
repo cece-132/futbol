@@ -27,4 +27,8 @@ class Game
     year = date_array[2].to_i
     Date.new(year, month, day)
   end
+
+  def self.find_game(games, game_id)
+    games.find { |game| game.game_id == game_id }
+  end
 end

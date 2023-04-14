@@ -199,4 +199,84 @@ RSpec.describe 'StatTracker' do
     end
   end
 
+  describe '#team_info(team_id)' do
+    it 'returns a hash for attributes: team_id, franchise_id, team_name, abbreviation, and link' do
+      expected = {
+        "team_id" => "18",
+        "franchise_id" => "34",
+        "team_name" => "Minnesota United FC",
+        "abbreviation" => "MIN",
+        "link" => "/api/v1/teams/18"
+      }
+  
+      expect(@stat_tracker.team_info("18")).to be_a Hash
+      expect(@stat_tracker.team_info("18")).to have_key('team_id')
+      expect(@stat_tracker.team_info("18")['team_id']).to be_a String
+
+      expect(@stat_tracker.team_info("18")).to have_key('franchise_id')
+      expect(@stat_tracker.team_info("18")['franchise_id']).to be_a String
+
+      expect(@stat_tracker.team_info("18")).to have_key('team_name')
+      expect(@stat_tracker.team_info("18")['team_name']).to be_a String
+
+      expect(@stat_tracker.team_info("18")).to have_key('abbreviation')
+      expect(@stat_tracker.team_info("18")['abbreviation']).to be_a String
+
+      expect(@stat_tracker.team_info("18")).to have_key('link')
+      expect(@stat_tracker.team_info("18")['link']).to be_a String
+
+      expect(@stat_tracker.team_info("18")).to eq expected
+    end
+  end
+
+  describe '#best_season(team_id)' do
+    it 'season with the highest win percentage for a team' do
+      expect(@stat_tracker.best_season("6")).to be_a String
+      expect(@stat_tracker.best_season("6")).to eq "20132014"
+    end
+  end
+
+  describe '#worst_season(team_id)' do
+    it "#worst_season" do
+      expect(@stat_tracker.worst_season("6")).to be_a String
+      expect(@stat_tracker.worst_season("6")).to eq "20142015"
+    end
+  end
+
+  describe '#average_win_percentage(team_id)' do
+    it "#average_win_percentage" do
+      expect(@stat_tracker.average_win_percentage("6")).to be_a Float
+      expect(@stat_tracker.average_win_percentage("6")).to eq 0.49
+    end
+  end
+
+  describe '#most_goals_scored(team_id)' do
+    it "#most_goals_scored" do
+      expect(@stat_tracker.most_goals_scored("18")).to be_a Integer
+      expect(@stat_tracker.most_goals_scored("18")).to eq 7
+    end
+  end
+
+  describe '#fewest_goals_scored(team_id)' do
+    it "#fewest_goals_scored" do
+      expect(@stat_tracker.fewest_goals_scored("18")).to be_a Integer
+      expect(@stat_tracker.fewest_goals_scored("18")).to eq 0
+    end
+  end
+
+  describe '#favorite_opponent(team_id)' do
+    it "Name of opponent with the lowest win percentage against the given team" do
+      expect(@stat_tracker.favorite_opponent("18")).to be_a String
+      expect(@stat_tracker.favorite_opponent("18")).to eq "DC United"
+    end
+  end
+
+  describe '#rival(team_id)' do
+    it "Name of opponent with the highest win percentage against the given team" do
+      expect(@stat_tracker.rival("18")).to be_a String
+      expect(@stat_tracker.rival("18")).to eq("Houston Dash").or(eq("LA Galaxy"))
+    end
+  end
+
+
 end
