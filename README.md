@@ -74,16 +74,28 @@ To check the testing percentage run `rspec spec`, then `open coverage/index.html
   Clone your fork
   From the command line, install gems and set up your DB:
     `bundle install`
-  Run the [entire test suite](#testing) with `rspec`.
+    Run the [entire test suite](#testing) with `rspec`.
 
 ## Architecture and Design
-## Endpoints
+
+  This app is designed to take in the data from a collection of csv file's and convert the csv into data objects that can then be manipulated throughout the application. 
+
+  ##### Object Oriented Programming (OOP)
+  
+  ##### Modules
+  Throughout the app **modules** are the preferred container for method sharing for the `lib/stat_tracker.rb` I chose this because I didn't want to have to instantiate objects everytime I needed to manipulate a specific set of data. Modules worked well for my use case because I was able to share different categories of methods with the `lib/stat_tracker.rb` while also keeping the data organized based on the return values.
+
+  ##### File Structure
+  ##### Command Line Interface
+  ##### Testing
+  ##### Database Access
+
 
 ## Credits
 <table align="left">
     <tr>
         <td align="left"> Candace Eckels: <a href="https://github.com/cece-132">GitHub</a> | <a href="https://www.linkedin.com/in/candace-eckels-b66089201/">LinkedIn</a></td>
     </tr>
-<td align="center"><img src="https://avatars.githubusercontent.com/u/100653933?v=4" alt="Candace Eckels GitHub"
- width="150" height="auto" /></td>
+        <td align="center"><img src="https://avatars.githubusercontent.com/u/100653933?v=4" alt="Candace Eckels GitHub" width="150" height="auto" />
+        </td>
  </table>
