@@ -1,3 +1,5 @@
+# possibly inherit from Game?
+
 class GameTeam
   attr_reader :game_id, :team_id, :home_or_away,
               :result, :settled_in, :head_coach,
