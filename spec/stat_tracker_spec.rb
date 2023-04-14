@@ -264,5 +264,11 @@ RSpec.describe 'StatTracker' do
     end
   end
 
+  describe '#favorite_opponent(team)id' do
+    it "#favorite_opponent" do
+      expect(@stat_tracker.favorite_opponent("18")).to eq "DC United"
+    end
+  end
+
 
 end

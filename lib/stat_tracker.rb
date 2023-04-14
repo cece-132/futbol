@@ -137,4 +137,8 @@ class StatTracker
     team_fewest_goals_scored(@game_teams, team_id)
   end
 
+  def favorite_opponent(team_id)
+    Team.find_team_name(team_fav_opponent(@game_teams, @games, team_id), @teams)
+  end
+
 end
