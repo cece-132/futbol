@@ -2,7 +2,7 @@ require 'simplecov'
 
 SimpleCov.start
 
-require './lib/game'
+require './lib/poros/game'
 require './lib/stat_tracker'
 
 RSpec.describe 'Game' do
