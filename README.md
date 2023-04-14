@@ -1,6 +1,8 @@
 # Futbol
 
-Starter repository for the Turing School of Software and Design, [Futbol project](https://backend.turing.edu/module1/projects/futbol/), [Spec Harness](https://github.com/turingschool-examples/futbol_spec_harness/blob/main/spec/stat_tracker_spec.rb).
+Starter repository for the Turing School of Software and Design, [Futbol project](https://backend.turing.edu/module1/projects/futbol/).
+
+---
 
 ## Table of Contents
   1. [Project Description](#project-description)
@@ -13,6 +15,8 @@ Starter repository for the Turing School of Software and Design, [Futbol project
   8. [Endponts](#endpoints)
   9. [Credits](#credits)
 
+---
+
 ## Project Description
 We will be using data from a fictional soccer league to analyze team performance for specific seasons and across seasons. We want to see who the best and worst performers are, as well as be able to pull statistics for individual teams. To that end we will create a StatTracker class that will provide us with the information we need.
 
@@ -24,21 +28,15 @@ This project will use a “red, green, refactor” approach. First, write tests,
 
 Progress will be tracked by utilizing a project management tool such as GitHub Issues and GitHub Projects.
 
-## Testing
-Another key goal of this project is to utilize Test Driven Development. Because the data set is so large, it will be inefficient to use the actual dataset as test data. Instead, making up your own test data will be a lot more efficient. This will either be done by creating dummy CSV files, known as fixture files, or by creating dummy data within the test files.
-
-To run the test suite:
- - Entire suite: `rspec spec`
- - One file: `rspec spec/<folder_name>/<file_name>.rb
- - One test: `rspec spec/<folder_name>/<file_name>.rb:<line_number>
-
-To check the testing percentage run `rspec spec`, then `open coverage/index.html`. An internet window should open with the testing coverage percentages for the entire application.
+---
 
 ## Iterations
   - Setup and File I/O
   - Statistics
   - Re-Organization
   - Build a Website
+
+---
 
 ## Project Requirements
   - [ ] Have implemented both inheritance and at least one module in a logical manner. 
@@ -58,6 +56,8 @@ To check the testing percentage run `rspec spec`, then `open coverage/index.html
   - [x] Commits are made in small chunks of functionality. 
   - [x] Use pull requests/github issues
 
+---
+
 ## Learning Goals
   - Build classes with single responsibilities.
   - Write organized readable code.
@@ -65,6 +65,8 @@ To check the testing percentage run `rspec spec`, then `open coverage/index.html
   - Design an Object Oriented Solution to a problem.
   - Practice algorithmic thinking.
   - Use Pull Requests and Issues to collaborate among multiple partners.
+
+---
 
 ## Run and Install The Project
   ruby version: ruby 2.7.2
@@ -76,25 +78,42 @@ To check the testing percentage run `rspec spec`, then `open coverage/index.html
     `bundle install`
     Run the [entire test suite](#testing) with `rspec`.
 
+---
+
 ## Architecture and Design
 
   This app is designed to take in the data from a collection of csv file's and convert the csv into data objects that can then be manipulated throughout the application. 
 
-  ##### Object Oriented Programming (OOP)
+  ### ***Object Oriented Programming (OOP)***
 
   This app follows OOP. Uses classes and objects to create modular reusable code. This was important to the organization of this project to writing code that was readable and followed single responsibility principle. 
   
-  ##### Modules
+  ### **Modules**
   Throughout the app **modules** are the preferred container for method sharing for the `lib/stat_tracker.rb` I chose this because I didn't want to have to instantiate objects everytime I needed to manipulate a specific set of data. Modules worked well for my use case because I was able to share different categories of methods with the `lib/stat_tracker.rb` while also keeping the data organized based on the return values.
 
-  ##### File Structure
+  ### ***File Structure and Command Line Interface (CLI)***
 
-    This project uses `lib`, `spec`, and `data` folders to organize the code. Each folder includes to follwing code:
-    - `lib` includes the library of code that contains a folder called `lib/poros`. This folder holds our plain old ruby objects. 
-  ##### Command Line Interface
-  ##### Testing
-  ##### Database Access
+  This project uses `lib`, `spec`, and `data` folders to organize the code. Each folder includes to follwing code:
+  - `lib` includes the library of code that contains a folder called `lib/poros`. This folder holds our plain old ruby objects. 
 
+  - `spec` holds the testing suite, all of the tests I have written throughout the project are held there.
+
+  - `runner.rb` is how I would run the project from the command line by running `ruby runner.rb`
+
+  ### ***Testing***
+
+  Another key goal of this project is to utilize Test Driven Development. Because the data set is so large, it will be inefficient to use the actual dataset as test data. Instead, making up your own test data will be a lot more efficient. This will either be done by creating dummy CSV files, known as fixture files, or by creating dummy data within the test files.
+
+  To run the test suite:
+  - Entire suite: `rspec spec`
+  - One file: `rspec spec/<folder_name>/<file_name>.rb
+  - One test: `rspec spec/<folder_name>/<file_name>.rb:<line_number>
+
+  To check the testing percentage run `rspec spec`, then `open coverage/index.html`. An internet window should open with the testing coverage percentages for the entire application.
+
+  ### ***Database Access***
+
+---
 
 ## Credits
 <table align="left">
