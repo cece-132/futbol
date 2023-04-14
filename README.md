@@ -5,7 +5,6 @@ Starter repository for the Turing School of Software and Design, [Futbol project
 ## Table of Contents
   1. [Project Description](#project-description)
   2. [Testing](#testing)
-    - [Spec Harness](#spec-harness)
   3. [Iterations](#iterations)
   4. [Project Requirements](#project-requirements)
   5. [Learning Goals](#learning-goals)
@@ -35,9 +34,6 @@ To run the test suite:
 
 To check the testing percentage run `rspec spec`, then `open coverage/index.html`. An internet window should open with the testing coverage percentages for the entire application.
 
-#### Spec Harness
-In addition to your own tests, instructors will use this Spec Harness to assess the completion of your project. Prior to your evaluation, follow the direction in the README to set up the spec harness and verify that your code passes the tests. *NOTE: the spec harness is not a replacement for writing your own tests.*
-
 ## Iterations
   - Setup and File I/O
   - Statistics
@@ -48,20 +44,19 @@ In addition to your own tests, instructors will use this Spec Harness to assess 
   - [ ] Have implemented both inheritance and at least one module in a logical manner. 
   - [ ] Can speak as to how/why inheritance and modules made sense for the given implementations, 
     why they improve the organization of the code, and the distinction between the two.
-  - [ ] Classes, methods, and variables are well named so that they clearly communicate their purpose. 
-  - [ ] Code is all properly indented and syntax is consistent. 
+  - [x] Classes, methods, and variables are well named so that they clearly communicate their purpose. 
+  - [x] Code is all properly indented and syntax is consistent. 
   - [ ] No methods are longer than 10 lines long. 
-  - [ ] Most enumerables/data structures chosen are the most efficient tool for a given job, 
+  - [x] Most enumerables/data structures chosen are the most efficient tool for a given job, 
     and I can speak as to why those enumerables/data structures were chosen.
   - [ ] Mocks and/or stubs are used appropriately to ensure one of the following: 
     - [ ] Testing is more robust (i.e., testing methods that might not otherwise be tested due to factors like randomness or user input) 
     - [ ] testing is more efficient (i.e., not reading a full CSV file every time you call a method for a test), 
       or that classes can be tested without relying on functionality from other classes. 
     - [ ] Students are able to speak as to how mocks and/or stubs are fulfilling the above conditions. 
-    - [ ] Spec harness runs in 5 seconds or less.
-  - [ ] Document and implement a code review process throughout the project whereby comments on pull requests are addressed before PRs are merged. 
-  - [ ] Commits are made in small chunks of functionality. 
-  - [ ] Use pull requests/github issues
+  - [x] Document and implement a code review process throughout the project whereby comments on pull requests are addressed before PRs are merged. 
+  - [x] Commits are made in small chunks of functionality. 
+  - [x] Use pull requests/github issues
 
 ## Learning Goals
   - Build classes with single responsibilities.
@@ -72,16 +67,14 @@ In addition to your own tests, instructors will use this Spec Harness to assess 
   - Use Pull Requests and Issues to collaborate among multiple partners.
 
 ## Run and Install The Project
-  ruby version:
-  gems:
+  ruby version: ruby 2.7.2
+  gems: simplecov, pry
 
   Fork this repository
   Clone your fork
   From the command line, install gems and set up your DB:
-    `bundle`
-    `rails db:create`
-  Run the entire test suite with `bundle exec rspec`.
-  Run your development server with rails s to see the app in action.
+    `bundle install`
+  Run the [entire test suite](#testing) with `rspec`.
 
 ## Architecture and Design
 ## Endpoints

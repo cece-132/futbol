@@ -1,5 +1,5 @@
 require 'simplecov'
-require 'pry'
+
 SimpleCov.start
 
 require './lib/game'
@@ -277,6 +277,5 @@ RSpec.describe 'StatTracker' do
       expect(@stat_tracker.rival("18")).to eq("Houston Dash").or(eq("LA Galaxy"))
     end
   end
-
 
 end
