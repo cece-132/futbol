@@ -132,4 +132,10 @@ module TeamStatistics
     end[0]
   end
 
+  def rival_opponent(game_teams, games, team_id)
+    opponent_wins_hash(game_teams, games, team_id).max_by do |t_id, stats|
+      stats[:wins].to_f / stats[:games_played]
+    end[0]
+  end
+
 end

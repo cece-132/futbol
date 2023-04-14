@@ -264,10 +264,17 @@ RSpec.describe 'StatTracker' do
     end
   end
 
-  describe '#favorite_opponent(team)id' do
-    it "#favorite_opponent" do
+  describe '#favorite_opponent(team_id)' do
+    it "Name of opponent with the lowest win percentage against the given team" do
       expect(@stat_tracker.favorite_opponent("18")).to be_a String
       expect(@stat_tracker.favorite_opponent("18")).to eq "DC United"
+    end
+  end
+
+  describe '#rival(team_id)' do
+    it "Name of opponent with the highest win percentage against the given team" do
+      expect(@stat_tracker.rival("18")).to be_a String
+      expect(@stat_tracker.rival("18")).to eq("Houston Dash").or(eq("LA Galaxy"))
     end
   end
 

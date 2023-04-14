@@ -141,4 +141,8 @@ class StatTracker
     Team.find_team_name(team_fav_opponent(@game_teams, @games, team_id), @teams)
   end
 
+  def rival(team_id)
+    Team.find_team_name(rival_opponent(@game_teams, @games, team_id), @teams)
+  end
+
 end
